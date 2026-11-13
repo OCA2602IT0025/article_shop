@@ -1,0 +1,19 @@
+<h1>投稿編集</h1>
+
+<%= form_with model: @article, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content, "投稿内容" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to "詳細画面に戻る", article_path(@article) %>

@@ -1,0 +1,25 @@
+<% if notice %>
+  <p style="color: green;"><%= notice %></p>
+<% end %>
+
+<h1>投稿一覧</h1>
+<!-- 以下は既存のテーブルコード -->
+
+<%= link_to "新規投稿", new_article_path %>
+
+<table border="1" style="border-collapse: collapse; width: 600px;">
+  <thead>
+    <tr>
+      <th style="width: 35%;">タイトル</th>
+      <th style="width: 65%;">投稿内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, article_path(article) %></td>
+        <td><%= article.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
